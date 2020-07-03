@@ -28,7 +28,7 @@ function GraphChart(){
   console.log(plotData);
   
 
-  var label = plotData.map((element,i) => i%2 === 0 ? '': element.x)
+  var label = plotData.map((element,i) => i%2 === 0 ? '': (element.x).toFixed(3))
 
 const state = {
     labels: label,
@@ -48,8 +48,8 @@ const state = {
     return(<div className="container">
         <div className="slidecontainer">
         <form onSubmit={e => handleSubmit(e)}>
-        <label>Enter the initial ball drop height in meters:</label><input onChange={e => setVal({...val,dropHeight:e.target.value})}></input>
-        <p>Custom range slider:{val.restitution}</p>
+        <label>Enter the initial ball drop height in meters:  </label><input onChange={e => setVal({...val,dropHeight:e.target.value})}></input>
+        <p>Co-efficient of restitution:  {val.restitution}</p>
            <input type="range" min="0" max="1" step="0.01" className="slider" id="myRange" onChange={e => setVal({...val,restitution:e.target.value})}/>
            <input type="submit" value="Plot"/>
         </form>
