@@ -17,12 +17,15 @@ exports.plotGraph = async (req, res) => {
             i++;
         }
 
+        
         var points = []
         bounceHeight.forEach((element, i) => {
-            points[i] = (Math.sqrt((2*element)/gravitational_constant))* (1+restitution)
+            points[i] = Math.sqrt((2*element)/gravitational_constant) * (1+restitution*1)
         })
+        
+        
 
-        for(let i = 0; i < points.length - 1; i++){
+        for(let i = 0; i < points.length-1; i++){
             points[i+1] = points[i] + points[i+1]
         }
 
@@ -31,7 +34,7 @@ exports.plotGraph = async (req, res) => {
         bounceHeight.forEach((element,i) => {
             time[i] = 2*(Math.sqrt((2*Math.pow(restitution,2)*element)/gravitational_constant))
         });
-
+        
         var t0 = Math.sqrt((2*dropHeight)/gravitational_constant) 
         
         var pitchPoints = [];
@@ -42,8 +45,10 @@ exports.plotGraph = async (req, res) => {
 
         points.unshift(0)
         points.pop()
-console.log(bounceHeight);
 
+        console.log(points);
+        console.log(pitchPoints);
+        
         let heightsArray = []
 
         if(points.length == bounceHeight.length) {

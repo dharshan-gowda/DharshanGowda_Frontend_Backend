@@ -25,10 +25,8 @@ function GraphChart(){
   }
 
   const [plotData, setPlotData] = useState([])
-  console.log(plotData);
-  
 
-  var label = plotData.map((element,i) => i%2 === 0 ? '': (element.x).toFixed(3))
+  var label = plotData.map((element,i) => (element.x).toFixed(3))
 
 const state = {
     labels: label,
