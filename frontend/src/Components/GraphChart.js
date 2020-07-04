@@ -48,7 +48,7 @@ const state = {
         <form onSubmit={e => handleSubmit(e)}>
         <label>Enter the initial ball drop height in meters:  </label><input onChange={e => setVal({...val,dropHeight:e.target.value})}></input>
         <p>Co-efficient of restitution:  {val.restitution}</p>
-           <input type="range" min="0" max="1" step="0.01" className="slider" id="myRange" onChange={e => setVal({...val,restitution:e.target.value})}/>
+           <input type="range" min="0" max="0.99" step="0.01" className="slider" id="myRange" onChange={e => setVal({...val,restitution:e.target.value})}/>
            <input type="submit" value="Plot"/>
         </form>
         </div>
