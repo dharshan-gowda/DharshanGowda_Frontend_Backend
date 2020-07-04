@@ -12,7 +12,7 @@ exports.plotGraph = async (req, res) => {
 
         var i=0;
 
-        while(parseInt(bounceHeight[i]) > 0){
+        while(bounceHeight[i] > 0.01){
             bounceHeight[i+1] = bounceHeight[i]*Math.pow(restitution,2);
             i++;
         }

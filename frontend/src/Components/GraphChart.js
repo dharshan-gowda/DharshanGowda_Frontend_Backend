@@ -52,7 +52,7 @@ const state = {
            <input type="submit" value="Plot"/>
         </form>
         </div>
-          <p>Number of bounces: {bounces}</p>
+          <p>Number of bounces (untill the ball reaches the height of 0.01 meters) : {bounces}</p>
         <div className="chart">
         <Line 
           data={state}
